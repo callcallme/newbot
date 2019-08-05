@@ -58,7 +58,7 @@ def handle_message(event):
     if '新北自行車' in msg:
         #msg = getubike.getBike()
         #result = '自行車'
-        tp = NTPUbike()
+        tp = NTPUbike.NTPUbike()
         msg = tp.getBike()
         content = 'bike'
         
@@ -87,10 +87,11 @@ def handle_message(event):
     elif '日月潭' in msg:
         status =5
         
-        
+  
+      
     else:
         if content == 'bike':
-            tp = NTPUbike()
+            tp = NTPUbike.NTPUbike()
             msg = tp.getAreaBike(msg)
             content=''
         else:            
