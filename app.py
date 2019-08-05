@@ -22,7 +22,7 @@ handler = WebhookHandler('86e586703b29cb67f92813076f135842')
 def keySearch(word):
     info ={'頻果':'醫生遠離你','美女':'搜尋中','bike':'中文叫腳踏車','聯成電腦':'good'}
     return info.get(word,'請輸入(頻果)(美女)(bike)(聯成電腦)(新北自行車)(北捷)(高捷)(台中日月潭)(日月潭)')
-
+content = ''
 
 
 # 監聽所有來自 /callback 的 Post Request
@@ -52,9 +52,32 @@ def handle_message(event):
     msg = event.message.text
     
     status = 1
+    
+    global content
+    
     if '新北自行車' in msg:
-        msg = getubike.getBike()
-        result = '自行車'
+        #msg = getubike.getBike()
+        #result = '自行車'
+        tp = NTPUbike()
+        msg = tp.getBike()
+        content = 'bike'
+        
+        
+        
+        
+        
+        
+        
+    elif '韓國瑜' in msg:
+        status = 6
+        imgurl = queryimage.QueryImage(1)
+        
+        
+        
+        
+        
+        
+    
     elif '北捷' in msg:
         status = 2
     elif '高捷' in msg:
@@ -63,13 +86,37 @@ def handle_message(event):
         status = 4
     elif '日月潭' in msg:
         status =5
-    else:            
-        msg = keySearch(msg)    
-    if status == 2:
+        
+        
+    else:
+        if content == 'bike':
+            tp = NTPUbike()
+            msg = tp.getAreaBike(msg)
+            content=''
+        else:            
+            msg = keySearch(msg)    
+        
+        
+        
+        
+        
+        
+        
+    if status == 6:
         message = ImageSendMessage(
-                original_content_url='https://web.metro.taipei/img/all/routemap2018.jpg',
-                preview_image_url='https://web.metro.taipei/img/all/routemap2018.jpg')
+                original_content_url=imgurl,
+                preview_image_url=imgurl)
                 #圖片網址必須 https .........jpg(png)
+ 
+
+
+
+
+
+
+
+               
+                
     elif status == 3:
         message = ImageSendMessage(
                 original_content_url='https://www.krtco.com.tw/images/newInnerSite/guide/guide_routemap.png',
@@ -84,6 +131,11 @@ def handle_message(event):
                 message = ImageSendMessage(
                 original_content_url='https://i3.achangpro.com/img.snowhy.tw/20190430173629_96.jpg',
                 preview_image_url='https://i3.achangpro.com/img.snowhy.tw/20190430173629_96.jpg')
+    elif status == 2:
+        message = ImageSendMessage(
+                original_content_url='https://web.metro.taipei/img/all/routemap2018.jpg',
+                preview_image_url='https://web.metro.taipei/img/all/routemap2018.jpg')
+
 
 
         
@@ -100,6 +152,10 @@ def handle_message(event):
 
 import os
 import getubike
+import queryimage
+import NTPUbike
+
+
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)

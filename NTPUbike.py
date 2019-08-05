@@ -28,9 +28,11 @@ class NTPUbike():
                 self.bike += row['sna'] + ' ' + row['sbi'] + ' ' + row['bemp'] + '\n' 
                 
         return self.bike
-tp =  NTPUbike()
-print(tp.getBike()) 
-print(tp.getAreaBike('三重區'))      
+    
+    
+#tp =  NTPUbike()
+#print(tp.getBike()) 
+#print(tp.getAreaBike('三重區'))      
         
 
 
