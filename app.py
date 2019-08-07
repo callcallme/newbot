@@ -132,6 +132,9 @@ def handle_message(event):
                         ),MessageTemplateAction(
                         label='高雄捷運',
                         text = '高捷'
+                        ),MessageTemplateAction(
+                        label='日月潭',
+                        text = '日月潭'
                         )
                     ]
                 )
