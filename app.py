@@ -116,7 +116,7 @@ def handle_message(event):
         
     elif '貼圖' in msg:
         msg = StickerSendMessage(package_id = 1,sticker_id = 2)
-        status = 3
+        status = 7
  
 
        
