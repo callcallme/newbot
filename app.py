@@ -39,7 +39,7 @@ handler = WebhookHandler('86e586703b29cb67f92813076f135842')
 def keySearch(word):
     
     info ={'蘋果':'醫生遠離你','美女':'搜尋中','bike':'中文叫腳踏車','聯成電腦':'good'}
-    return info.get(word,'請輸入(樣板)(蘋果)(美女)(bike)(聯成電腦)(新北自行車)(台中日月潭)(日月潭)(新北自行車)(韓國瑜)')
+    return info.get(word,'請輸入(樣板)(蘋果)(美女)(bike)(聯成電腦)(新北自行車)(新北自行車)(韓國瑜)')
 content = ''
 
 
@@ -135,6 +135,9 @@ def handle_message(event):
                         ),MessageTemplateAction(
                         label='日月潭',
                         text = '日月潭'
+                        ),MessageTemplateAction(
+                        label='台中日月潭',
+                        text = '台中日月潭'
                         )
                     ]
                 )
