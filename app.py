@@ -111,9 +111,15 @@ def handle_message(event):
         status = 6
         imgurl = queryimage.QueryImage(1)
         
+
+
         
-        
-        
+    elif '貼圖' in msg:
+        msg = StickerSendMessage(package_id = 1,sticker_id = 2)
+        status = 3
+ 
+
+       
     elif '樣板' in msg:
         status = 7
         msg = TemplateSendMessage(
@@ -149,7 +155,7 @@ def handle_message(event):
     elif '北捷' in msg:
         status = 2
     elif '高捷' in msg:
-        status = 3
+        status = 8
     elif '台中日月潭' in msg:
         status = 4
     elif '日月潭' in msg:
@@ -186,7 +192,7 @@ def handle_message(event):
 
                
                 
-    elif status == 3:
+    elif status == 8:
         message = ImageSendMessage(
                 original_content_url='https://www.krtco.com.tw/images/newInnerSite/guide/guide_routemap.png',
                 preview_image_url='https://www.krtco.com.tw/images/newInnerSite/guide/guide_routemap.png')
