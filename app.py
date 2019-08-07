@@ -124,8 +124,8 @@ def handle_message(event):
                 thumbnail_image_url='https://34c.cc/PetUpload/2016-09/0b32aff3c0e8884141e4d61e65b2515c.jpg',
                 actions=[
                     MessageTemplateAction(
-                        label='ButtonTemplate',
-                        text = 'ButtonTemplate'
+                        label='請按我!!',
+                        text = '按到了~.~'
                         )
                     ]
                 )
