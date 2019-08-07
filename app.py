@@ -6,9 +6,11 @@ from linebot import (
 from linebot.exceptions import (
     InvalidSignatureError
 )
-from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
-)
+#from linebot.models import (
+#    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
+#)
+from linebot.models import*
+
 
 app = Flask(__name__)
 
@@ -18,11 +20,37 @@ line_bot_api = LineBotApi('jUj0lW7u/u8xQDwU2H+KF3Up7clElmAWY6PWHMPHbmZpj2+TjK76L
 handler = WebhookHandler('86e586703b29cb67f92813076f135842')
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #line 訊息回傳
 def keySearch(word):
+    
     info ={'蘋果':'醫生遠離你','美女':'搜尋中','bike':'中文叫腳踏車','聯成電腦':'good'}
     return info.get(word,'請輸入(蘋果)(美女)(bike)(聯成電腦)(新北自行車)(北捷)(高捷)(台中日月潭)(日月潭)(新北自行車)(韓國瑜)')
 content = ''
+
+
+
+
+
+
+
+
+
+
 
 
 # 監聽所有來自 /callback 的 Post Request
@@ -45,6 +73,17 @@ def callback():
 
 
 result = ''
+
+
+
+
+
+
+
+
+
+
+
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -75,8 +114,28 @@ def handle_message(event):
         
         
         
+    elif '樣板' in msg:
+        status = 6
+        msg = TemplateSendMessage(
+        alt_text = '目錄樣板',
+        template = ButtonsTemplate(
+                title = '樣板介紹',
+                text = '第一種',
+                thumbnail_image_url='https://34c.cc/PetUpload/2016-09/0b32aff3c0e8884141e4d61e65b2515c.jpg',
+                actions=[
+                    MessageTemplateAction(
+                        label='ButtonTemplate',
+                        text = 'ButtonTemplate'
+                        )
+                    ]
+                )
+            )
+            
+            
         
-        
+    
+    
+    
     
     elif '北捷' in msg:
         status = 2
@@ -85,7 +144,7 @@ def handle_message(event):
     elif '台中日月潭' in msg:
         status = 4
     elif '日月潭' in msg:
-        status =5
+        status = 5
         
   
       
@@ -139,7 +198,8 @@ def handle_message(event):
 
 
 
-        
+    elif status == 7:
+        message =msg
 
     else:
         
@@ -151,10 +211,18 @@ def handle_message(event):
         event.reply_token,
         message)
 
+
+
+
 import os
 import getubike
 import queryimage
 import NTPUbike
+
+
+
+
+
 
 
 if __name__ == "__main__":
