@@ -32,7 +32,7 @@ class NTPUbike():
         self.bike = ''
         for row in self.response:
             if row['sarea'] == area:
-                self.bike += row['sna'] + ' ' + row['sbi'] + ' ' + row['bemp'] + '\n' 
+                self.bike += row['sna'] +' '+ '可借車位數: ' + row['sbi'] + ' 可還空位數:' + row['bemp'] + '\n' 
                 
         return self.bike
     
