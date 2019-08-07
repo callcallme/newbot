@@ -126,17 +126,21 @@ def handle_message(event):
                     MessageTemplateAction(
                         label='請按我!!',
                         text = '按到了~.~'
-                        ),MessageTemplateAction(
+                        ),
+                    MessageTemplateAction(
                         label='台北捷運!!',
                         text = '北捷'
-                        ),MessageTemplateAction(
+                        ),
+                    MessageTemplateAction(
                         label='高雄捷運',
                         text = '高捷'
-                        ),MessageTemplateAction(
+                        ),
+                    MessageTemplateAction(
                         label='日月潭',
                         text = '日月潭'
-                        ),MessageTemplateAction(
-                        label='台中日月潭',
+                        ),
+                    MessageTemplateAction(
+                        label='台中日月潭'
                         text = '台中日月潭'
                         )
                     ]
