@@ -115,7 +115,7 @@ def handle_message(event):
         
         
     elif '樣板' in msg:
-        status = 6
+        status = 7
         msg = TemplateSendMessage(
         alt_text = '目錄樣板',
         template = ButtonsTemplate(
