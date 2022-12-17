@@ -151,31 +151,31 @@ def handle_message(event):
             
             
         
-    elif '請按我!!' in msg:
-        status = 7
-        msg = TemplateSendMessage(
-        alt_text = '目錄樣板',
-        template = ButtonsTemplate(
-                title = '生活請line我',
-                text = '請按以下鍵',
-                thumbnail_image_url='https://34c.cc/PetUpload/2016-09/0b32aff3c0e8884141e4d61e65b2515c.jpg',
-                actions=[
-                    MessageTemplateAction(
-                        label='請按我!!',
-                        text = '按到了~.~'
-                        ),MessageTemplateAction(
-                        label='台北捷運!!',
-                        text = '北捷'
-                        ),MessageTemplateAction(
-                        label='高雄捷運',
-                        text = '高捷'
-                        ),MessageTemplateAction(
-                        label='日月潭',
-                        text = '日月潭'
-                        )
-                     ]
-                )
-            )
+#    elif '請按我!!' in msg:
+#        status = 7
+#        msg = TemplateSendMessage(
+#        alt_text = '目錄樣板',
+#        template = ButtonsTemplate(
+#                title = '生活請line我',
+#                text = '請按以下鍵',
+#                thumbnail_image_url='https://34c.cc/PetUpload/2016-09/0b32aff3c0e8884141e4d61e65b2515c.jpg',
+#                actions=[
+#                    MessageTemplateAction(
+#                        label='請按我!!',
+#                        text = '按到了~.~'
+#                        ),MessageTemplateAction(
+#                        label='台北捷運!!',
+#                        text = '北捷'
+#                        ),MessageTemplateAction(
+#                        label='高雄捷運',
+#                        text = '高捷'
+#                        ),MessageTemplateAction(
+#                        label='日月潭',
+#                        text = '日月潭'
+#                        )
+#                     ]
+#                )
+#            )
         
     
     
